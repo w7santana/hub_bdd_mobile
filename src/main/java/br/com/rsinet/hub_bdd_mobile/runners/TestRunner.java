@@ -35,6 +35,7 @@ public class TestRunner {
 		/* Informa o nome do analista no relatorio */
 		Reporter.setSystemInfo("Tester Name", "Willian Santana");
 		
+		
 		DriverFactory.getDriver().resetApp();
 	}
 

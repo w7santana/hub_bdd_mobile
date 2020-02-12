@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="6" time="196.303328">
-<testcase classname="Busca de produto através da página principal" name="Busca válida" time="36.852406">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="6" time="235.762943">
+<testcase classname="Busca de produto através da página principal" name="Busca válida" time="49.794872">
 <system-out><![CDATA[Dado que estou na tela principal da aplicação...............................passed
 Quando eu clicar em uma "LAPTOPS"...........................................passed
 Quando eu clicar no "HP PAVILION 15Z LAPTOP"................................passed
 Então um tela com a descrição do produto "HP PAVILION 15Z LAPTOP" deve ser apresentada.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Busca de produto através da página principal" name="Busca inválida" time="33.563421">
+<testcase classname="Busca de produto através da página principal" name="Busca inválida" time="43.188082">
 <system-out><![CDATA[Dado que estou na tela principal da aplicação...............................passed
 Quando eu clicar em uma "LAPTOPS"...........................................passed
 E eu clicar no botão filtro.................................................passed
@@ -20,7 +20,7 @@ E eu clicar no botão Aplicar Filtro.........................................pas
 Então será apresentada uma mensagem na tela informando que o produto buscado não existe.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Busca de produto pela lupa" name="Busca de produto existente" time="22.660694">
+<testcase classname="Busca de produto pela lupa" name="Busca de produto existente" time="30.815991">
 <system-out><![CDATA[Dado que estou na tela inicial da aplicação.................................passed
 Quando eu clicar no campo de pesquisa.......................................passed
 Quando eu preencher o campo pesquisa com o nome de um "HP PAVILION 15Z LAPTOP".passed
@@ -28,7 +28,7 @@ E clicar na lupa............................................................pass
 Então o "HP PAVILION 15Z LAPTOP" que eu pesquisei deverá ser exibido na tela.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Busca de produto pela lupa" name="Busca de produto inexistente" time="22.325287">
+<testcase classname="Busca de produto pela lupa" name="Busca de produto inexistente" time="25.12072">
 <system-out><![CDATA[Dado que estou na tela inicial da aplicação.................................passed
 Quando eu clicar no campo de pesquisa.......................................passed
 Quando eu preencher o campo pesquisa com um "caixa de som JBL"..............passed
@@ -36,7 +36,7 @@ E clicar na lupa............................................................pass
 Então será apresentada uma mensagem informando não há resultados para a palavra pesquisada.passed
 ]]></system-out>
 </testcase>
-<testcase classname="Cadastro de novo usuário" name="Cadastro com sucesso" time="54.062571">
+<testcase classname="Cadastro de novo usuário" name="Cadastro com sucesso" time="57.786223">
 <system-out><![CDATA[Dado que estou na tela principal da aplicação...............................passed
 Quando eu clicar no menu lateral............................................passed
 E clicar no botão Login.....................................................passed
@@ -58,7 +58,7 @@ E eu clicar no menu lateral.................................................pass
 Então o poderei ver meu nome de usuário.....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Cadastro de novo usuário" name="Falha no cadastro" time="26.838949">
+<testcase classname="Cadastro de novo usuário" name="Falha no cadastro" time="29.057055">
 <system-out><![CDATA[Dado que estou na tela principal da aplicação...............................passed
 Quando eu clicar no menu lateral............................................passed
 E clicar no botão Login.....................................................passed
