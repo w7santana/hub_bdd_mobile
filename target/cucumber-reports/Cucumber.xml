@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="6" time="196.303328">
+<testcase classname="Busca de produto através da página principal" name="Busca válida" time="36.852406">
+<system-out><![CDATA[Dado que estou na tela principal da aplicação...............................passed
+Quando eu clicar em uma "LAPTOPS"...........................................passed
+Quando eu clicar no "HP PAVILION 15Z LAPTOP"................................passed
+Então um tela com a descrição do produto "HP PAVILION 15Z LAPTOP" deve ser apresentada.passed
+]]></system-out>
+</testcase>
+<testcase classname="Busca de produto através da página principal" name="Busca inválida" time="33.563421">
+<system-out><![CDATA[Dado que estou na tela principal da aplicação...............................passed
+Quando eu clicar em uma "LAPTOPS"...........................................passed
+E eu clicar no botão filtro.................................................passed
+E eu clicar no filtro Customization.........................................passed
+E eu clicar no filtro dois em um............................................passed
+E eu clicar no filtro Customization.........................................passed
+E eu clicar no filtro Memory................................................passed
+E eu clicar no filtro desesseis GB..........................................passed
+E eu clicar no botão Aplicar Filtro.........................................passed
+Então será apresentada uma mensagem na tela informando que o produto buscado não existe.passed
+]]></system-out>
+</testcase>
+<testcase classname="Busca de produto pela lupa" name="Busca de produto existente" time="22.660694">
+<system-out><![CDATA[Dado que estou na tela inicial da aplicação.................................passed
+Quando eu clicar no campo de pesquisa.......................................passed
+Quando eu preencher o campo pesquisa com o nome de um "HP PAVILION 15Z LAPTOP".passed
+E clicar na lupa............................................................passed
+Então o "HP PAVILION 15Z LAPTOP" que eu pesquisei deverá ser exibido na tela.passed
+]]></system-out>
+</testcase>
+<testcase classname="Busca de produto pela lupa" name="Busca de produto inexistente" time="22.325287">
+<system-out><![CDATA[Dado que estou na tela inicial da aplicação.................................passed
+Quando eu clicar no campo de pesquisa.......................................passed
+Quando eu preencher o campo pesquisa com um "caixa de som JBL"..............passed
+E clicar na lupa............................................................passed
+Então será apresentada uma mensagem informando não há resultados para a palavra pesquisada.passed
+]]></system-out>
+</testcase>
+<testcase classname="Cadastro de novo usuário" name="Cadastro com sucesso" time="54.062571">
+<system-out><![CDATA[Dado que estou na tela principal da aplicação...............................passed
+Quando eu clicar no menu lateral............................................passed
+E clicar no botão Login.....................................................passed
+E clicar no botão SIGN UP TODAY.............................................passed
+Quando preencher o campo user name com ""...................................passed
+E preencher o campo email com "joaosilva@email.com".........................passed
+E preencher o campo password com "!Joao123".................................passed
+E preencher o campo confirm password com "!Joao123".........................passed
+E preencher o campo first name password com "João"..........................passed
+E preencher o campo last name password com "Silva"..........................passed
+E preencher o campo phone number com "1198888-8888".........................passed
+E selecionar o pais "Brazil"................................................passed
+E preencher o campo estate com "São Paulo"..................................passed
+E preencher o campo address com "Av. Paulista, 200".........................passed
+E preencher o campo city com "São Paulo"....................................passed
+E preencher o campo zip com "01311-922".....................................passed
+E clicar no botão register..................................................passed
+E eu clicar no menu lateral.................................................passed
+Então o poderei ver meu nome de usuário.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Cadastro de novo usuário" name="Falha no cadastro" time="26.838949">
+<system-out><![CDATA[Dado que estou na tela principal da aplicação...............................passed
+Quando eu clicar no menu lateral............................................passed
+E clicar no botão Login.....................................................passed
+E clicar no botão SIGN UP TODAY.............................................passed
+Quando digitar no campo user name "joao"....................................passed
+E clicar no campo email.....................................................passed
+Então será apresentada uma mensagem dizendo que o mínimo de caracteres não foi atingido.passed
+]]></system-out>
+</testcase>
+</testsuite>

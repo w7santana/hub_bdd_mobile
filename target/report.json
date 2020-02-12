@@ -1,0 +1,1097 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#language: pt"
+      }
+    ],
+    "line": 2,
+    "elements": [
+      {
+        "line": 7,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 217040700,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "que estou na tela principal da aplicação",
+            "match": {
+              "location": "BuscaHomeSteps.que_estou_na_tela_principal_da_aplicação()"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 3867679300,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "eu clicar em uma \"LAPTOPS\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "LAPTOPS",
+                  "offset": 18
+                }
+              ],
+              "location": "BuscaHomeSteps.eu_clicar_em_uma(String)"
+            },
+            "keyword": "Quando "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 21737227800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforeCenario()"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "Busca válida",
+        "description": "",
+        "id": "busca-de-produto-através-da-página-principal;busca-válida;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1708085800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterCenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Esquema do Cenário",
+        "steps": [
+          {
+            "result": {
+              "duration": 8118750100,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "eu clicar no \"HP PAVILION 15Z LAPTOP\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "HP PAVILION 15Z LAPTOP",
+                  "offset": 14
+                }
+              ],
+              "location": "BuscaHomeSteps.eu_clicar_no(String)"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 1203622300,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "um tela com a descrição do produto \"HP PAVILION 15Z LAPTOP\" deve ser apresentada",
+            "match": {
+              "arguments": [
+                {
+                  "val": "HP PAVILION 15Z LAPTOP",
+                  "offset": 36
+                }
+              ],
+              "location": "BuscaHomeSteps.um_tela_com_a_descrição_do_produto_deve_ser_apresentada(String)"
+            },
+            "keyword": "Então "
+          }
+        ],
+        "tags": [
+          {
+            "line": 10,
+            "name": "@FiltroPositivo"
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 114900,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "que estou na tela principal da aplicação",
+            "match": {
+              "location": "BuscaHomeSteps.que_estou_na_tela_principal_da_aplicação()"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 3888013500,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "eu clicar em uma \"LAPTOPS\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "LAPTOPS",
+                  "offset": 18
+                }
+              ],
+              "location": "BuscaHomeSteps.eu_clicar_em_uma(String)"
+            },
+            "keyword": "Quando "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 17160603900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforeCenario()"
+            }
+          }
+        ],
+        "line": 20,
+        "name": "Busca inválida",
+        "description": "",
+        "id": "busca-de-produto-através-da-página-principal;busca-inválida",
+        "after": [
+          {
+            "result": {
+              "duration": 1801314600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterCenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Cenário",
+        "steps": [
+          {
+            "result": {
+              "duration": 3118949000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "eu clicar no botão filtro",
+            "match": {
+              "location": "BuscaHomeSteps.eu_clicar_no_botão_filtro()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 2559085700,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "eu clicar no filtro Customization",
+            "match": {
+              "location": "BuscaHomeSteps.eu_clicar_no_filtro_Customization()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 236780400,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "eu clicar no filtro dois em um",
+            "match": {
+              "location": "BuscaHomeSteps.eu_clicar_no_filtro_dois_em_um()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1900941100,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "eu clicar no filtro Customization",
+            "match": {
+              "location": "BuscaHomeSteps.eu_clicar_no_filtro_Customization()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1247088500,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "eu clicar no filtro Memory",
+            "match": {
+              "location": "BuscaHomeSteps.eu_clicar_no_filtro_Memory()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 168771500,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "eu clicar no filtro desesseis GB",
+            "match": {
+              "location": "BuscaHomeSteps.eu_clicar_no_filtro_desesseis_GB()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 672968800,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "eu clicar no botão Aplicar Filtro",
+            "match": {
+              "location": "BuscaHomeSteps.eu_clicar_no_botão_Aplicar_Filtro()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 808789000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "será apresentada uma mensagem na tela informando que o produto buscado não existe",
+            "match": {
+              "location": "BuscaHomeSteps.será_apresentada_uma_mensagem_na_tela_informando_que_o_produto_buscado_não_existe()"
+            },
+            "keyword": "Então "
+          }
+        ],
+        "tags": [
+          {
+            "line": 19,
+            "name": "@FiltroNegativo"
+          }
+        ]
+      }
+    ],
+    "name": "Busca de produto através da página principal",
+    "description": "\nComo um cliente\nEu quero encontrar um produto através da tela principal",
+    "id": "busca-de-produto-através-da-página-principal",
+    "keyword": "Funcionalidade",
+    "uri": "BuscaHome.feature"
+  },
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#language: pt"
+      }
+    ],
+    "line": 2,
+    "elements": [
+      {
+        "line": 8,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 137500,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "que estou na tela inicial da aplicação",
+            "match": {
+              "location": "BuscaLupaSteps.que_estou_na_tela_inicial_da_aplicação()"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 1394905600,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "eu clicar no campo de pesquisa",
+            "match": {
+              "location": "BuscaLupaSteps.eu_clicar_no_campo_de_pesquisa()"
+            },
+            "keyword": "Quando "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 16858147100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforeCenario()"
+            }
+          }
+        ],
+        "line": 20,
+        "name": "Busca de produto existente",
+        "description": "",
+        "id": "busca-de-produto-pela-lupa;busca-de-produto-existente;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1818782200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterCenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Esquema do Cenário",
+        "steps": [
+          {
+            "result": {
+              "duration": 132283800,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "eu preencher o campo pesquisa com o nome de um \"HP PAVILION 15Z LAPTOP\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "HP PAVILION 15Z LAPTOP",
+                  "offset": 48
+                }
+              ],
+              "location": "BuscaLupaSteps.eu_preencher_o_campo_pesquisa_com_o_nome_de_um(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 641499800,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "clicar na lupa",
+            "match": {
+              "location": "BuscaLupaSteps.clicar_na_lupa()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1814937500,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "o \"HP PAVILION 15Z LAPTOP\" que eu pesquisei deverá ser exibido na tela",
+            "match": {
+              "arguments": [
+                {
+                  "val": "HP PAVILION 15Z LAPTOP",
+                  "offset": 3
+                }
+              ],
+              "location": "BuscaLupaSteps.o_que_eu_pesquisei_deverá_ser_exibido_na_tela(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Então "
+          }
+        ],
+        "tags": [
+          {
+            "line": 12,
+            "name": "@BuscaPositiva"
+          }
+        ]
+      },
+      {
+        "line": 8,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 113600,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "que estou na tela inicial da aplicação",
+            "match": {
+              "location": "BuscaLupaSteps.que_estou_na_tela_inicial_da_aplicação()"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 1310254300,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "eu clicar no campo de pesquisa",
+            "match": {
+              "location": "BuscaLupaSteps.eu_clicar_no_campo_de_pesquisa()"
+            },
+            "keyword": "Quando "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 16776904000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforeCenario()"
+            }
+          }
+        ],
+        "line": 31,
+        "name": "Busca de produto inexistente",
+        "description": "",
+        "id": "busca-de-produto-pela-lupa;busca-de-produto-inexistente;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1745941300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterCenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Esquema do Cenário",
+        "steps": [
+          {
+            "result": {
+              "duration": 602785100,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "eu preencher o campo pesquisa com um \"caixa de som JBL\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "caixa de som JBL",
+                  "offset": 38
+                }
+              ],
+              "location": "BuscaLupaSteps.eu_preencher_o_campo_pesquisa_com_um(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 557668300,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "clicar na lupa",
+            "match": {
+              "location": "BuscaLupaSteps.clicar_na_lupa()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1331619900,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "será apresentada uma mensagem informando não há resultados para a palavra pesquisada",
+            "match": {
+              "location": "BuscaLupaSteps.será_apresentada_uma_mensagem_informando_não_há_resultados_para_a_palavra_pesquisada()"
+            },
+            "keyword": "Então "
+          }
+        ],
+        "tags": [
+          {
+            "line": 23,
+            "name": "@BuscaNegativa"
+          }
+        ]
+      }
+    ],
+    "name": "Busca de produto pela lupa",
+    "description": "\nCOMO um cliente\nEU quero digitar nome de um produto na barra de pesquisa\nPARA que o produto possa ser exibido na página de resultados",
+    "id": "busca-de-produto-pela-lupa",
+    "keyword": "Funcionalidade",
+    "uri": "BuscaLupa.feature"
+  },
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#language: pt"
+      }
+    ],
+    "line": 2,
+    "elements": [
+      {
+        "line": 8,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 132800,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "que estou na tela principal da aplicação",
+            "match": {
+              "location": "BuscaHomeSteps.que_estou_na_tela_principal_da_aplicação()"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 901205900,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "eu clicar no menu lateral",
+            "match": {
+              "location": "CadastroSteps.eu_clicar_no_menu_lateral()"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 997843900,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "clicar no botão Login",
+            "match": {
+              "location": "CadastroSteps.clicar_no_botão_Login()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1351619300,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "clicar no botão SIGN UP TODAY",
+            "match": {
+              "location": "CadastroSteps.clicar_no_botão_SIGN_UP_TODAY()"
+            },
+            "keyword": "E "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 17450461900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforeCenario()"
+            }
+          }
+        ],
+        "line": 34,
+        "name": "Cadastro com sucesso",
+        "description": "",
+        "id": "cadastro-de-novo-usuário;cadastro-com-sucesso;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1730692700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterCenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Esquema do Cenário",
+        "steps": [
+          {
+            "result": {
+              "duration": 2025781500,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "preencher o campo user name com \"\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "",
+                  "offset": 33
+                }
+              ],
+              "location": "CadastroSteps.preencher_o_campo_user_name_com(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 1544549300,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "preencher o campo email com \"joaosilva@email.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "joaosilva@email.com",
+                  "offset": 29
+                }
+              ],
+              "location": "CadastroSteps.preencher_o_campo_email_com(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1541890600,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "preencher o campo password com \"!Joao123\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "!Joao123",
+                  "offset": 32
+                }
+              ],
+              "location": "CadastroSteps.preencher_o_campo_password_com(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 3085565600,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "preencher o campo confirm password com \"!Joao123\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "!Joao123",
+                  "offset": 40
+                }
+              ],
+              "location": "CadastroSteps.preencher_o_campo_confirm_password_com(String)"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 452790500,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "preencher o campo first name password com \"João\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "João",
+                  "offset": 43
+                }
+              ],
+              "location": "CadastroSteps.preencher_o_campo_first_name_password_com(String)"
+            },
+            "matchedColumns": [
+              4
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1339463300,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "preencher o campo last name password com \"Silva\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Silva",
+                  "offset": 42
+                }
+              ],
+              "location": "CadastroSteps.preencher_o_campo_last_name_password_com(String)"
+            },
+            "matchedColumns": [
+              5
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1316590000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "preencher o campo phone number com \"1198888-8888\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1198888-8888",
+                  "offset": 36
+                }
+              ],
+              "location": "CadastroSteps.preencher_o_campo_phone_number_com(String)"
+            },
+            "matchedColumns": [
+              6
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 11529505000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "selecionar o pais \"Brazil\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Brazil",
+                  "offset": 19
+                }
+              ],
+              "location": "CadastroSteps.selecionar_o_pais(String)"
+            },
+            "matchedColumns": [
+              7
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1083115900,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "preencher o campo estate com \"São Paulo\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "São Paulo",
+                  "offset": 30
+                }
+              ],
+              "location": "CadastroSteps.preencher_o_campo_estate_com(String)"
+            },
+            "matchedColumns": [
+              8
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1318749200,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "preencher o campo address com \"Av. Paulista, 200\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Av. Paulista, 200",
+                  "offset": 31
+                }
+              ],
+              "location": "CadastroSteps.preencher_o_campo_address_com(String)"
+            },
+            "matchedColumns": [
+              9
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1299101900,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "preencher o campo city com \"São Paulo\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "São Paulo",
+                  "offset": 28
+                }
+              ],
+              "location": "CadastroSteps.preencher_o_campo_city_com(String)"
+            },
+            "matchedColumns": [
+              10
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1275516600,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "preencher o campo zip com \"01311-922\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "01311-922",
+                  "offset": 27
+                }
+              ],
+              "location": "CadastroSteps.preencher_o_campo_zip_com(String)"
+            },
+            "matchedColumns": [
+              11
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 594739800,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "clicar no botão register",
+            "match": {
+              "location": "CadastroSteps.clicar_no_botão_register()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 2236123600,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "eu clicar no menu lateral",
+            "match": {
+              "location": "CadastroSteps.eu_clicar_no_menu_lateral()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 987132100,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "o poderei ver meu nome de usuário",
+            "match": {
+              "location": "CadastroSteps.o_poderei_ver_meu_nome_de_usuário()"
+            },
+            "keyword": "Então "
+          }
+        ],
+        "tags": [
+          {
+            "line": 14,
+            "name": "@SucessoNoCadastro"
+          }
+        ]
+      },
+      {
+        "line": 8,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 94100,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "que estou na tela principal da aplicação",
+            "match": {
+              "location": "BuscaHomeSteps.que_estou_na_tela_principal_da_aplicação()"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 1231174700,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "eu clicar no menu lateral",
+            "match": {
+              "location": "CadastroSteps.eu_clicar_no_menu_lateral()"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 1001941200,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "clicar no botão Login",
+            "match": {
+              "location": "CadastroSteps.clicar_no_botão_Login()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1195408700,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "clicar no botão SIGN UP TODAY",
+            "match": {
+              "location": "CadastroSteps.clicar_no_botão_SIGN_UP_TODAY()"
+            },
+            "keyword": "E "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 18279268100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforeCenario()"
+            }
+          }
+        ],
+        "line": 37,
+        "name": "Falha no cadastro",
+        "description": "",
+        "id": "cadastro-de-novo-usuário;falha-no-cadastro",
+        "after": [
+          {
+            "result": {
+              "duration": 1706512500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterCenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1922505300,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "digitar no campo user name \"joao\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "joao",
+                  "offset": 28
+                }
+              ],
+              "location": "CadastroSteps.digitarNoCampoUserName(String)"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 652689900,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "clicar no campo email",
+            "match": {
+              "location": "CadastroSteps.clicar_no_campo_email()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 849355000,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "será apresentada uma mensagem dizendo que o mínimo de caracteres não foi atingido",
+            "match": {
+              "location": "CadastroSteps.será_apresentada_uma_mensagem_dizendo_que_o_mínimo_de_caracteres_não_foi_atingido()"
+            },
+            "keyword": "Então "
+          }
+        ],
+        "tags": [
+          {
+            "line": 36,
+            "name": "@FalhaNoCadastro"
+          }
+        ]
+      }
+    ],
+    "name": "Cadastro de novo usuário",
+    "description": "\nComo um novo usuário\nEu quero cadastrar meus dados pessoais\nPara que eu possa usar um usuario e senha para fazer login",
+    "id": "cadastro-de-novo-usuário",
+    "keyword": "Funcionalidade",
+    "uri": "Cadastro.feature"
+  }
+]

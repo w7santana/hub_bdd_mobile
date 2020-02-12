@@ -1,0 +1,2221 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/9fa70d0ed9c34a8ed445ceee3494d3d7de7f8918/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>hub_bdd_mobile</title>
+
+</head>
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Report com Screenshot</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+				<span class='label suite-start-time'>Feb 12, 2020 12:28:55 PM</span>
+			</a>
+			<a href='#!'>
+				<span class='label'>v3.0.3</span>
+			</a>
+		</ul>
+	</div>
+</nav>
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@FiltroPositivo</a></li>
+					<li><a href='#'>@FiltroNegativo</a></li>
+					<li><a href='#'>@BuscaPositiva</a></li>
+					<li><a href='#'>@BuscaNegativa</a></li>
+					<li><a href='#'>@SucessoNoCadastro</a></li>
+					<li><a href='#'>@FalhaNoCadastro</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span><span class='strong'>54</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong'>0</span> test(s) failed, <span class='strong'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span><span class='strong'>50</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong'>0</span> step(s) failed, <span class='strong'>4</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h3>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Busca de produto através da página principal</span>
+						<span class='test-time'>Feb 12, 2020 12:28:55 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 12, 2020 12:28:55 PM</span>
+	<span class='label end-time'>Feb 12, 2020 12:30:04 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 8s+702ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='2'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Esquema do Cenário: Busca válida</div>						
+						<span class='node-time'>Feb 12, 2020 12:28:55 PM</span>
+						<span class='node-duration'>0h 0m 0s+9ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='info'>
+													<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+													<td class='timestamp'>12:28:55 PM</td>
+													<td class='step-details'><table><tr><td>categoriaDeProdutos</td><td>produtoDeMinhaEscolha</td></tr><tr><td>HEADPHONES</td><td>LOGITECH USB HEADSET H390</td></tr></table></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1  pass' status='pass' test-id='3'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Scenario: Busca válida</div>						
+						<span class='node-time'>Feb 12, 2020 12:28:55 PM</span>
+						<span class='node-duration'>0h 0m 35s+183ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='4'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Dado que estou na tela principal da aplicação</div>						
+						<span class='node-time'>Feb 12, 2020 12:29:17 PM</span>
+						<span class='node-duration'>0h 0m 0s+221ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:29:17 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='5'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Quando eu clicar em uma "LAPTOPS"</div>						
+						<span class='node-time'>Feb 12, 2020 12:29:17 PM</span>
+						<span class='node-duration'>0h 0m 3s+868ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:29:21 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='6'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Quando eu clicar no "HP PAVILION 15Z LAPTOP"</div>						
+						<span class='node-time'>Feb 12, 2020 12:29:21 PM</span>
+						<span class='node-duration'>0h 0m 8s+119ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:29:29 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='7'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Então um tela com a descrição do produto "HP PAVILION 15Z LAPTOP" deve ser apresentada</div>						
+						<span class='node-time'>Feb 12, 2020 12:29:29 PM</span>
+						<span class='node-duration'>0h 0m 1s+205ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:29:30 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+										<ul class='screenshots'>
+												<li><img data-featherlight='C:\Users\willian.costa\eclipse-workspace\servlets\hub_bdd_mobile/target/cucumber-reports/screenshots/Busca válida-2020-02-12-12_29_31.png' width='10%' src='' data-src='C:\Users\willian.costa\eclipse-workspace\servlets\hub_bdd_mobile/target/cucumber-reports/screenshots/Busca válida-2020-02-12-12_29_31.png'></li>
+										</ul>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+				<li class='node level-1  pass' status='pass' test-id='8'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Scenario: Busca inválida</div>						
+						<span class='node-time'>Feb 12, 2020 12:29:32 PM</span>
+						<span class='node-duration'>0h 0m 31s+782ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='9'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Dado que estou na tela principal da aplicação</div>						
+						<span class='node-time'>Feb 12, 2020 12:29:49 PM</span>
+						<span class='node-duration'>0h 0m 0s+1ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:29:49 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='10'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Quando eu clicar em uma "LAPTOPS"</div>						
+						<span class='node-time'>Feb 12, 2020 12:29:49 PM</span>
+						<span class='node-duration'>0h 0m 3s+889ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:29:53 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='11'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E eu clicar no botão filtro</div>						
+						<span class='node-time'>Feb 12, 2020 12:29:53 PM</span>
+						<span class='node-duration'>0h 0m 3s+120ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:29:56 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='12'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E eu clicar no filtro Customization</div>						
+						<span class='node-time'>Feb 12, 2020 12:29:56 PM</span>
+						<span class='node-duration'>0h 0m 2s+559ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:29:59 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='13'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E eu clicar no filtro dois em um</div>						
+						<span class='node-time'>Feb 12, 2020 12:29:59 PM</span>
+						<span class='node-duration'>0h 0m 0s+238ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:29:59 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='14'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E eu clicar no filtro Customization</div>						
+						<span class='node-time'>Feb 12, 2020 12:29:59 PM</span>
+						<span class='node-duration'>0h 0m 1s+901ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:01 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='15'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E eu clicar no filtro Memory</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:01 PM</span>
+						<span class='node-duration'>0h 0m 1s+247ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:02 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='16'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E eu clicar no filtro desesseis GB</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:02 PM</span>
+						<span class='node-duration'>0h 0m 0s+170ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:02 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='17'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E eu clicar no botão Aplicar Filtro</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:02 PM</span>
+						<span class='node-duration'>0h 0m 0s+673ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:03 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='18'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Então será apresentada uma mensagem na tela informando que o produto buscado não existe</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:03 PM</span>
+						<span class='node-duration'>0h 0m 0s+810ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:04 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+										<ul class='screenshots'>
+												<li><img data-featherlight='C:\Users\willian.costa\eclipse-workspace\servlets\hub_bdd_mobile/target/cucumber-reports/screenshots/Busca inválida-2020-02-12-12_30_04.png' width='10%' src='' data-src='C:\Users\willian.costa\eclipse-workspace\servlets\hub_bdd_mobile/target/cucumber-reports/screenshots/Busca inválida-2020-02-12-12_30_04.png'></li>
+										</ul>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>Busca de produto pela lupa</span>
+						<span class='test-time'>Feb 12, 2020 12:30:06 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 12, 2020 12:30:06 PM</span>
+	<span class='label end-time'>Feb 12, 2020 12:30:49 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 43s+343ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='20'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Esquema do Cenário: Busca de produto existente</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:06 PM</span>
+						<span class='node-duration'>0h 0m 0s+1ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='info'>
+													<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+													<td class='timestamp'>12:30:06 PM</td>
+													<td class='step-details'><table><tr><td>produtoExistente</td></tr><tr><td>HP PAVILION 15Z LAPTOP</td></tr></table></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1  pass' status='pass' test-id='21'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Scenario: Busca de produto existente</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:06 PM</span>
+						<span class='node-duration'>0h 0m 20s+852ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='22'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Dado que estou na tela inicial da aplicação</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:22 PM</span>
+						<span class='node-duration'>0h 0m 0s+1ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:22 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='23'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Quando eu clicar no campo de pesquisa</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:22 PM</span>
+						<span class='node-duration'>0h 0m 1s+395ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:24 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='24'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Quando eu preencher o campo pesquisa com o nome de um "HP PAVILION 15Z LAPTOP"</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:24 PM</span>
+						<span class='node-duration'>0h 0m 0s+133ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:24 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='25'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E clicar na lupa</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:24 PM</span>
+						<span class='node-duration'>0h 0m 0s+642ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:25 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='26'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Então o "HP PAVILION 15Z LAPTOP" que eu pesquisei deverá ser exibido na tela</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:25 PM</span>
+						<span class='node-duration'>0h 0m 1s+816ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:26 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+										<ul class='screenshots'>
+												<li><img data-featherlight='C:\Users\willian.costa\eclipse-workspace\servlets\hub_bdd_mobile/target/cucumber-reports/screenshots/Busca de produto existente-2020-02-12-12_30_27.png' width='10%' src='' data-src='C:\Users\willian.costa\eclipse-workspace\servlets\hub_bdd_mobile/target/cucumber-reports/screenshots/Busca de produto existente-2020-02-12-12_30_27.png'></li>
+										</ul>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='27'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Esquema do Cenário: Busca de produto inexistente</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:28 PM</span>
+						<span class='node-duration'>0h 0m 0s+1ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='info'>
+													<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+													<td class='timestamp'>12:30:28 PM</td>
+													<td class='step-details'><table><tr><td>produtoInexistente</td></tr><tr><td>caixa de som JBL</td></tr></table></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1  pass' status='pass' test-id='28'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Scenario: Busca de produto inexistente</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:28 PM</span>
+						<span class='node-duration'>0h 0m 20s+668ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='29'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Dado que estou na tela inicial da aplicação</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:45 PM</span>
+						<span class='node-duration'>0h 0m 0s+1ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:45 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='30'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Quando eu clicar no campo de pesquisa</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:45 PM</span>
+						<span class='node-duration'>0h 0m 1s+311ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:46 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='31'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Quando eu preencher o campo pesquisa com um "caixa de som JBL"</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:46 PM</span>
+						<span class='node-duration'>0h 0m 0s+604ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:47 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='32'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E clicar na lupa</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:47 PM</span>
+						<span class='node-duration'>0h 0m 0s+559ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:48 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='33'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Então será apresentada uma mensagem informando não há resultados para a palavra pesquisada</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:48 PM</span>
+						<span class='node-duration'>0h 0m 1s+332ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:30:49 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+										<ul class='screenshots'>
+												<li><img data-featherlight='C:\Users\willian.costa\eclipse-workspace\servlets\hub_bdd_mobile/target/cucumber-reports/screenshots/Busca de produto inexistente-2020-02-12-12_30_49.png' width='10%' src='' data-src='C:\Users\willian.costa\eclipse-workspace\servlets\hub_bdd_mobile/target/cucumber-reports/screenshots/Busca de produto inexistente-2020-02-12-12_30_49.png'></li>
+										</ul>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='34'>
+					<div class='test-heading'>
+						<span class='test-name'>Cadastro de novo usuário</span>
+						<span class='test-time'>Feb 12, 2020 12:30:51 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Feb 12, 2020 12:30:51 PM</span>
+	<span class='label end-time'>Feb 12, 2020 12:32:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 19s+248ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='35'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Esquema do Cenário: Cadastro com sucesso</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:51 PM</span>
+						<span class='node-duration'>0h 0m 0s+2ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='info'>
+													<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+													<td class='timestamp'>12:30:51 PM</td>
+													<td class='step-details'><table><tr><td>usuario</td><td>email</td><td>senha</td><td>confirmSenha</td><td>primeiroNome</td><td>ultimoNome</td><td>phone</td><td>pais</td><td>estado</td><td>endereco</td><td>cidade</td><td>cep</td></tr><tr><td></td><td>joaosilva@email.com</td><td>!Joao123</td><td>!Joao123</td><td>João</td><td>Silva</td><td>1198888-8888</td><td>Brazil</td><td>São Paulo</td><td>Av. Paulista, 200</td><td>São Paulo</td><td>01311-922</td></tr></table></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1  pass' status='pass' test-id='36'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Scenario: Cadastro com sucesso</div>						
+						<span class='node-time'>Feb 12, 2020 12:30:51 PM</span>
+						<span class='node-duration'>0h 0m 52s+366ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='37'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Dado que estou na tela principal da aplicação</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:08 PM</span>
+						<span class='node-duration'>0h 0m 0s+1ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:08 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='38'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Quando eu clicar no menu lateral</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:08 PM</span>
+						<span class='node-duration'>0h 0m 0s+902ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:09 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='39'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E clicar no botão Login</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:09 PM</span>
+						<span class='node-duration'>0h 0m 0s+999ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:10 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='40'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E clicar no botão SIGN UP TODAY</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:10 PM</span>
+						<span class='node-duration'>0h 0m 1s+352ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:11 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='41'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Quando preencher o campo user name com ""</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:11 PM</span>
+						<span class='node-duration'>0h 0m 2s+26ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:13 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='42'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E preencher o campo email com "joaosilva@email.com"</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:13 PM</span>
+						<span class='node-duration'>0h 0m 1s+546ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:15 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='43'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E preencher o campo password com "!Joao123"</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:15 PM</span>
+						<span class='node-duration'>0h 0m 1s+543ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:16 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='44'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E preencher o campo confirm password com "!Joao123"</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:16 PM</span>
+						<span class='node-duration'>0h 0m 3s+85ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:20 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='45'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E preencher o campo first name password com "João"</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:20 PM</span>
+						<span class='node-duration'>0h 0m 0s+454ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:20 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='46'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E preencher o campo last name password com "Silva"</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:20 PM</span>
+						<span class='node-duration'>0h 0m 1s+341ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:21 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='47'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E preencher o campo phone number com "1198888-8888"</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:21 PM</span>
+						<span class='node-duration'>0h 0m 1s+318ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:23 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='48'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E selecionar o pais "Brazil"</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:23 PM</span>
+						<span class='node-duration'>0h 0m 11s+531ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:34 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='49'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E preencher o campo estate com "São Paulo"</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:34 PM</span>
+						<span class='node-duration'>0h 0m 1s+83ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:35 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='50'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E preencher o campo address com "Av. Paulista, 200"</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:35 PM</span>
+						<span class='node-duration'>0h 0m 1s+319ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:37 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='51'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E preencher o campo city com "São Paulo"</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:37 PM</span>
+						<span class='node-duration'>0h 0m 1s+300ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:38 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='52'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E preencher o campo zip com "01311-922"</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:38 PM</span>
+						<span class='node-duration'>0h 0m 1s+277ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:39 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='53'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E clicar no botão register</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:39 PM</span>
+						<span class='node-duration'>0h 0m 0s+595ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:40 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='54'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E eu clicar no menu lateral</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:40 PM</span>
+						<span class='node-duration'>0h 0m 2s+237ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:42 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='55'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Então o poderei ver meu nome de usuário</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:42 PM</span>
+						<span class='node-duration'>0h 0m 0s+988ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:31:43 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+										<ul class='screenshots'>
+												<li><img data-featherlight='C:\Users\willian.costa\eclipse-workspace\servlets\hub_bdd_mobile/target/cucumber-reports/screenshots/Cadastro com sucesso-2020-02-12-12_31_43.png' width='10%' src='' data-src='C:\Users\willian.costa\eclipse-workspace\servlets\hub_bdd_mobile/target/cucumber-reports/screenshots/Cadastro com sucesso-2020-02-12-12_31_43.png'></li>
+										</ul>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+				<li class='node level-1  pass' status='pass' test-id='56'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Scenario: Falha no cadastro</div>						
+						<span class='node-time'>Feb 12, 2020 12:31:45 PM</span>
+						<span class='node-duration'>0h 0m 25s+146ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='57'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Dado que estou na tela principal da aplicação</div>						
+						<span class='node-time'>Feb 12, 2020 12:32:03 PM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:32:03 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='58'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Quando eu clicar no menu lateral</div>						
+						<span class='node-time'>Feb 12, 2020 12:32:03 PM</span>
+						<span class='node-duration'>0h 0m 1s+232ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:32:04 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='59'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E clicar no botão Login</div>						
+						<span class='node-time'>Feb 12, 2020 12:32:04 PM</span>
+						<span class='node-duration'>0h 0m 1s+3ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:32:05 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='60'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E clicar no botão SIGN UP TODAY</div>						
+						<span class='node-time'>Feb 12, 2020 12:32:05 PM</span>
+						<span class='node-duration'>0h 0m 1s+196ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:32:06 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='61'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Quando digitar no campo user name "joao"</div>						
+						<span class='node-time'>Feb 12, 2020 12:32:06 PM</span>
+						<span class='node-duration'>0h 0m 1s+923ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:32:08 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='62'>
+					<div class='collapsible-header'>
+						<div class='node-name'>E clicar no campo email</div>						
+						<span class='node-time'>Feb 12, 2020 12:32:08 PM</span>
+						<span class='node-duration'>0h 0m 0s+653ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:32:09 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-2 leaf pass' status='pass' test-id='63'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Então será apresentada uma mensagem dizendo que o mínimo de caracteres não foi atingido</div>						
+						<span class='node-time'>Feb 12, 2020 12:32:09 PM</span>
+						<span class='node-duration'>0h 0m 0s+850ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:32:10 PM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+										<ul class='screenshots'>
+												<li><img data-featherlight='C:\Users\willian.costa\eclipse-workspace\servlets\hub_bdd_mobile/target/cucumber-reports/screenshots/Falha no cadastro-2020-02-12-12_32_10.png' width='10%' src='' data-src='C:\Users\willian.costa\eclipse-workspace\servlets\hub_bdd_mobile/target/cucumber-reports/screenshots/Falha no cadastro-2020-02-12-12_32_10.png'></li>
+										</ul>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+	</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view --><div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@FiltroPositivo</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Feb 12, 2020 12:28:55 PM</td>
+										<td class='linked' test-id='3'>Busca de produto através da página principal.Scenario: Busca válida</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@FiltroNegativo</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Feb 12, 2020 12:29:32 PM</td>
+										<td class='linked' test-id='8'>Busca de produto através da página principal.Scenario: Busca inválida</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@BuscaPositiva</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Feb 12, 2020 12:30:06 PM</td>
+										<td class='linked' test-id='21'>Busca de produto pela lupa.Scenario: Busca de produto existente</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@BuscaNegativa</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Feb 12, 2020 12:30:28 PM</td>
+										<td class='linked' test-id='28'>Busca de produto pela lupa.Scenario: Busca de produto inexistente</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@SucessoNoCadastro</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Feb 12, 2020 12:30:51 PM</td>
+										<td class='linked' test-id='36'>Cadastro de novo usuário.Scenario: Cadastro com sucesso</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@FalhaNoCadastro</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Feb 12, 2020 12:31:45 PM</td>
+										<td class='linked' test-id='56'>Cadastro de novo usuário.Scenario: Falha no cadastro</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>54</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>54</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Feb 12, 2020 12:28:55 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Feb 12, 2020 12:32:32 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>217,163ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>OS</td>
+								<td>Windows10</td>
+							</tr>
+							<tr>
+								<td>Tester Name</td>
+								<td>Willian Santana</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+						</tr>
+						<tr>
+							<td>@FiltroPositivo</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>@FiltroNegativo</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>@BuscaPositiva</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>@BuscaNegativa</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>@SucessoNoCadastro</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>@FalhaNoCadastro</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view --><!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 54,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 50,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 4,
+				exceptionsChild: 0,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/9fa70d0ed9c34a8ed445ceee3494d3d7de7f8918/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+	</body>
+	
+</html>
